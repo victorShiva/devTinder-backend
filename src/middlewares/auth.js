@@ -7,7 +7,7 @@ const userAuth = async (req, res, next) => {
         if (!token) {
             throw new Error("Please login first");
         }
-        const decoded = jwt.verify(token, "dev@tinder#123");
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findById(decoded.userId);
         if (!user) {
             throw new Error("User not found");

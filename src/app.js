@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const { dbConnection } = require('./config/database.js');
 const User = require('./models/user.js');
 const authRouter = require('./routes/auth.routes.js')
@@ -8,7 +9,6 @@ const cookieParser = require('cookie-parser');
 const ConnectionRequest = require('./models/connectionRequest.js');
 const userRouter = require('./routes/user.routes.js');
 const cors = require('cors');
-
 
 
 const app = express();
